@@ -1,0 +1,636 @@
+body {
+    padding: 0;
+    margin: 0;
+    background: whitesmoke;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-decoration: none;
+    overflow-x: hidden;
+    transition: all 0.5s linear;
+}
+body.dark-mode { background: #1a1919; }
+
+/* html canvas */
+#Canvas{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+}
+/* -------------------------------------------------------CORNER BUTTONS: */
+/* light/dark and lang BUTTONS */
+#mode-selector,
+#lang-selector{
+    z-index: 2;
+    cursor: pointer;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-left: 10px;
+    margin-top: 10px;
+	border-radius: 40px;
+	font-size: 1.2rem;
+	height: 40px;
+	width: 120px;
+	border: none;
+	background-color: #2c2e32;
+	color: #e5e8e8;
+	transition: all 0.3s linear;
+}
+/* language selector button diff */
+#lang-selector{
+    margin-left: 140px;
+	width: 75px;
+}
+
+#mode-selector:hover,
+#lang-selector:hover {
+	background-color: #000401;
+    transition: all 0.3s linear;
+}
+#mode-selector.dark-mode,
+#lang-selector.dark-mode {
+	background-color: #e5e8e8;
+	color: #35383c;
+    transition: all 0.3s linear;
+}
+#mode-selector.dark-mode:hover,
+#lang-selector.dark-mode:hover {
+	background-color: #4e545c;
+	color: #e5e8e8;
+    transition: all 0.3s linear;
+}
+
+
+
+/* ----------------------------------------------------------HEADER: */
+/* header bg */
+.header { /* light years */
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(-45deg,rgb(73, 12, 73, 0.5), rgba(109, 57, 65, 0.9), rgb(40, 70, 116, 0.9), rgb(25, 132, 165, 0.5)), url('../../img/bg/nebula.webp');
+    background-size: 140%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: center;
+    animation: backgroundTransition 18s ease-in-out infinite;
+    transition: all 0.5s linear;
+}
+.header.dark-mode {  /* black hole */
+    animation: none;
+    background: linear-gradient(-45deg,rgba(27, 7, 27, 0.7), rgba(1, 21, 27, 0.7)), url('../../img/bg/blackhole.webp');
+    background-position: center;
+    background-repeat: repeat-y;
+    animation: backgroundTransition-dark 16s ease-in-out infinite;
+    transition: all 0.5s linear; 
+}
+
+@keyframes backgroundTransition {
+    0%   { background-position: 0%  80%; }
+    50%  { background-position: 80% 100%; }
+    100% { background-position: 0%  80%; }
+}
+@keyframes backgroundTransition-dark {
+    0%   { background-size: 150%; }
+    50%  { background-size: 180%; }
+    100% { background-size: 150%; }
+}
+
+h1{  /*tarso galvao*/
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: whitesmoke;
+    animation: header-text 2s 1;
+    margin-top: -5px;
+    transition: all 0.5s linear;
+}
+h1.dark-mode { color:rgb(93, 73, 129); }
+
+h3, h4{  /*full stack dev*/
+    margin-top: -20px;
+    font-family: Arial;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #1b1a1a;
+    text-shadow: rgb(25, 132, 165) 1px 1px 10px;
+    animation: header-text 2.5s 1;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: all 0.5s linear;
+}
+h4.dark-mode,
+h3.dark-mode {
+    color: gray;
+    text-shadow: #88acd1 1px 1px 4px;
+}
+
+@keyframes header-text {
+    0%  { color: transparent; }
+    35% { letter-spacing: 5px;
+          margin-bottom: -10px; }
+    85% { letter-spacing: 1.5px; }
+}
+
+.header-image { /*my ugly ass face*/
+    visibility: visible;
+    opacity: 1;
+    transform: rotate(-10deg);
+    /* height: 40%; */
+    border-radius: 50%;
+    margin-bottom: 50px;
+    transition: all 0.5s linear;
+}
+.header-image.dark-mode{
+    filter:grayscale(0.5);
+}
+
+/* --------------------------------------------------ROCKET CONTROL: */
+/* the rocket anchor*/
+#rocket{
+    position: absolute;
+    left: 50%;
+    right: 50%;
+}
+
+/* the rocket img */
+#Rocket {
+    margin: 0;
+    margin-top: 170px;
+    padding: 15vh;
+    animation: infinite-spinning 4s infinite;
+    animation-timing-function: linear;
+    transform-origin: 0% 0%;
+}
+
+#Rocket:hover {
+    animation-play-state: paused;
+}
+
+@keyframes infinite-spinning {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(-360deg); }
+}
+
+
+/* ---------------------------------------------PROG. LANGUAGES ICONS: */
+/* programming language icons*/
+.icons{
+    /* width: 35px; */
+    padding: 2px;
+    transition: all 0.5s linear;
+}
+
+.icons:hover{
+    content: attr(data-text);
+    transform: scale(1.5);
+    transition: all 0.1s linear;
+}
+
+.row{
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    bottom: 0;
+    padding: 0.5%;
+    animation: icon-shrink 2s 1;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+@keyframes icon-shrink{
+    0%   { transform: scale(1.5); }
+    60%  { transform: scale(0.8); }
+    100% { transform: scale(1); }
+}
+
+
+/* --------------------------------------------------- MENU HAMBURGUER: */
+/* menu hamburger */
+.checkbox-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkbox {
+    height: 100px;
+    width: 90px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 3;
+    transition: 400ms ease-in-out 0;
+}
+
+.checkbox .trace {
+    width: 50px;
+    height: 2px;
+    background-color: gray;
+    position: absolute;
+    transition: 0.5s ease-in-out;
+}
+
+/* menu unclicked*/
+.checkbox .trace:nth-child(1) {
+    top: 24px;
+    transform: rotate(0);
+}
+.checkbox .trace:nth-child(2) {
+    top: 40px;
+    transform: rotate(0);
+}
+.checkbox .trace:nth-child(3) {
+    top: 58px;
+    transform: rotate(0);
+}
+
+/* menu clicked animation*/
+#toggle:checked + .checkbox .trace:nth-child(1) {
+    transform: rotate(45deg);
+    background-color: purple;
+    top: 47px;
+}
+#toggle:checked + .checkbox .trace:nth-child(2) {
+    transform: translateX(100px);
+    width: 30px;
+    visibility: hidden;
+    opacity: 0;
+}
+#toggle:checked + .checkbox .trace:nth-child(3) {
+    transform: rotate(-45deg);
+    background-color: purple;
+    top: 48px;
+}
+
+/* some com o checkbox original */
+#toggle { display: none; }
+
+/* ---------------------------------------------- MENU HB LINKS/TEXT: */
+.menu {
+    position: fixed;
+    top: 28px;
+    right: 30px;
+    background: transparent;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 0px 0px gray;
+    z-index: -1;
+    transition: 400ms ease-in-out 0s;
+}
+
+.menu-items {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+    transition: 400ms ease-in-out 0s;
+}
+
+.menu-items ul {
+    list-style-type: none;
+    text-align: right;
+}
+
+.menu-items ul li a {
+    margin: 10px 0;
+    color: rgb(83, 46, 83);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 35px;
+}
+.menu-items.dark-mode ul li a { color: gray; }
+
+/* animacao do conteudo do menu abrindo*/
+#toggle:checked + .checkbox { background-color: whitesmoke; }
+/* cor do fundo do hamburguer*/
+#toggle:checked + .checkbox.dark-mode { background-color: #1b1a1a; }
+
+#toggle:checked ~ .menu { /* COR DO FUNDO DO MENU ABERTO*/
+    box-shadow: 0px 0px 0px 100vmax whitesmoke;
+    z-index: 2;
+}
+#toggle:checked ~ .menu.dark-mode { /* COR DO FUNDO DO MENU ABERTO*/
+    box-shadow: 0px 0px 0px 100vmax #1b1a1a;
+    z-index: 2;
+}
+
+#toggle:checked ~ .menu-items {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/* --------------------------------------------------------CARDS:  */
+.container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3rem 0;
+    text-decoration: none;
+    transition: all 0.5s linear;
+}
+.card-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 90%;
+    text-decoration: none;
+    transition: all 0.5s linear;
+}
+
+/* all cards */
+.card-all{
+    margin: 2rem 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    filter: grayscale(0.7);
+    transition: 0.3s;
+}
+.card-all:hover{
+    filter: grayscale(0);
+}
+/* api iframe (card-0) PIECHART */
+.card-0{ 
+    height: 360px;
+    width: 300px;
+}
+#iFrame{
+    width: 400px;
+    height: 420px;
+    top: 50%;
+    left: 50%;
+    border: none;
+}
+.card-iframe { margin-left: 25%; }
+.card-icon{
+    width:360px;
+}
+/* textos ao lado dos cards */
+.card-text {
+    width: 40%;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    color: gray; /* cor do texto ao lado dos cards*/
+    transition: all 0.4s linear;
+}
+
+.card-wrapper {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.card-all:hover > .card-wrapper::before{
+    text-decoration: none;
+    opacity: 0.5;
+    width: 350px;
+    height: 350px;
+}
+.card-wrapper::before {
+    content: '';
+    position: absolute;
+    height: 150px;
+    width: 150px;
+    display: block;
+    /* cor da borda do card antes hover*/
+    border: 5px dotted rgb(13, 160, 197); 
+    opacity: 0;
+    border-radius: 40%;
+    transition: 0.3s;
+}
+
+.links { text-decoration: none; }
+
+
+
+/* -------------------------------------------------------EMAIL FORM: */
+.msgbox-wrapper{
+    padding: 0;
+    margin: 0;
+    margin-bottom: -75px;
+    display: grid;
+    grid-auto-flow: column;
+}
+
+.form-container{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+}
+.message-honey{
+    display:none;
+}
+.form-input,
+.form-message,
+.form-btn{
+    padding: 4px;
+    margin-top: 3px;
+    border: 3px dotted rgb(25, 132, 165);
+    border-radius: 4px;
+    background-color: rgb(218, 218, 218);
+    min-width: 350px;
+}
+.form-message{
+    height:100px;
+    border-width: 4px;
+    border-image: linear-gradient(-45deg, rgb(100, 17, 100), rgb(129, 73, 82), rgb(40, 70, 116), rgb(25, 132, 165)) 1;
+}
+.form-btn{
+    cursor: pointer;
+    background: linear-gradient(-45deg, rgb(100, 17, 100), rgb(129, 73, 82), rgb(40, 70, 116), rgb(25, 132, 165));
+    animation: backgroundTransition 8s ease-in-out infinite;
+    background-size: 400% 400%;
+    color: darkgray;
+    border: 0;
+}
+
+/* dark-mode message box*/
+.form-input.dark-mode,
+.form-message.dark-mode,
+.form-btn.dark-mode{
+    border: 3px dotted rgb(134, 190, 190);
+}
+.form-message.dark-mode { border: 4px solid rgb(134, 190, 190); }
+
+.form-btn.dark-mode{
+    animation: none;
+    border: 0;
+}
+
+
+/* -----------------------------------------------------------FOOTER: */
+
+.footer {
+    z-index: 1;
+    height: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(-45deg, rgb(100, 17, 100), rgb(129, 73, 82), rgb(40, 70, 116), rgb(25, 132, 165));
+    background-size: 400% 400%;
+    animation: backgroundTransition 8s ease-in-out infinite;
+}
+.footer.dark-mode { background: #1b1a1a; }
+
+.footer a,
+.footer p{
+    text-decoration: none;
+    color: #1b1919;
+}
+.footer.dark-mode a,
+.footer.dark-mode p{
+    color: rgb(139, 135, 135);
+}
+
+
+
+/*---------------------------------------------------------------------------------------*/
+/* ----------------------------------------RESPONSIVO----------------------------------- */
+/*------------------------------------------------------------------------810px----------*/
+
+@media (max-width: 810px) {
+    #Rocket{
+        width:35px;
+        height:35px;
+        margin-top: 250px;
+        padding: 12vmax;
+    }
+    .icons { width: 23px; }
+
+    .card-iframe{ margin-left: 5%; }
+
+    #mode-selector{
+        margin-top: 23px;
+        margin-left: 20px;
+        font-size: 11px;
+        width: 50px;
+        height: 50px;
+    }
+    #lang-selector{
+        margin-top: 23px;
+        margin-left: 80px;
+        font-size: 11px;
+        width: 50px;
+        height: 50px;
+    }
+    
+    .checkbox .trace {
+        width: 40px;
+        height: 5px;
+    }
+    .header { background-size: cover; }
+
+    .header.dark-mode{
+        animation: none;
+        animation: backgroundTransition-dark2 16s ease-in-out infinite;
+    }
+    @keyframes backgroundTransition-dark2 {
+        0%   { background-size: 320%; }
+        50%  { background-size: 280%; }
+        100% { background-size: 320%; }
+    }
+
+    h1 { margin-top: -20px; }
+
+    .header-image{
+        margin-top: 100px;
+    }
+
+    .checkbox .trace:nth-child(1) {
+        top: 25px;
+        transform: rotate(0);
+    }
+    .checkbox .trace:nth-child(2) {
+        top: 40px;
+        transform: rotate(0);
+    }
+    .checkbox .trace:nth-child(3) {
+        top: 55px;
+        transform: rotate(0);
+    }
+    .container { margin-top: 2px; }
+    .card-container {
+        flex-direction: column;
+    }
+    .container .card-container:nth-child(1),
+    .container .card-container:nth-child(3),
+    .container .card-container:nth-child(5) {
+        flex-direction: column-reverse;
+    }
+    .card-all{
+        filter: none;
+    }
+    .card {
+        height: 250px;
+        width: 250px;
+    }
+    .card-text {
+        width: 90%;
+        margin-top: 3rem;
+        text-align: center;
+    }
+    .msgbox-wrapper{
+        margin-top: 40px;
+        grid-auto-flow: row;
+        grid-auto-rows: max-content;
+    }
+    .footer,
+    .footer.dark-mode{
+        font-size: 12px;
+    }
+}
+
+
+/*---------------------------------------------------------------------------------------*/
+/* ----------------------------------------RESPONSIVO----------------------------------- */
+/*----------------------------------------------------------------------------428px------*/
+@media (max-width: 428px) {
+    #Rocket{
+        margin-top: 80px;
+    }
+    .header-image{
+        margin-top: 0px;
+        width: 15rem;
+        height: auto;
+    }
+    .icons { width: 20px; }
+    .header.dark-mode{
+        animation: none;
+        animation: backgroundTransition-dark3 16s ease-in-out infinite;
+    }
+    @keyframes backgroundTransition-dark3 {
+        0%   { background-size: 400%; }
+        50%  { background-size: 360%; }
+        100% { background-size: 400%; }
+    }
+    .msgbox-wrapper{
+        grid-auto-flow: row;
+    }
+
+
+}

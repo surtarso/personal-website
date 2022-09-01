@@ -1,0 +1,18 @@
+body{
+    background-color: #1a1b1a;
+  }
+  .wrapper{
+    color: gray;
+    display: block;
+    overflow: hidden;
+    text-align: center;
+    padding: 50px;
+  }
+  a {
+    color: darkcyan;
+  }
+  p{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
