@@ -1,0 +1,53 @@
+#body {
+    background-color: #1a1b1a;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.card {
+    box-shadow: 2px 2px 2px 3px rgb(22, 22, 22);
+    transform: scale(1);
+    transition: all 0.25s linear;
+}
+
+.card:hover {
+    transform: scale(1.025);
+    box-shadow: 0 1px 1px 1px rgb(22, 22, 22);
+    transition: all 0.15s linear;
+}
+#footerNote a {
+    text-decoration: none;
+    color: darkcyan;
+}
+
+.container {
+    padding: 10px;
+}
+
+.container-md {
+    color: darkcyan;
+}
+
+.card-img-top {
+    padding: 5px;
+    border-radius: 25px;
+}
+
+.navbar {
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: large;
+}
+
+.footer,
+.navbar {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+}
+
+@media (max-width: 900px) {
+    .col {
+        min-width: 50%;
+    }
+}
