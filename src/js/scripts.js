@@ -12,15 +12,15 @@ const menuIcon = document.getElementsByTagName('label')[0]; //hamburger traces
 const menuText = document.getElementsByTagName('nav')[0]; //menu items
 const h3 = document.getElementsByTagName('h3')[0]; //job positions
 const h1 = document.getElementsByTagName('h1')[0]; //tarso galvao
-const form_btn = document.getElementsByClassName('form-btn')[0]; //send buttons
-const form_input = document.getElementsByClassName('form-input')[0]; //form name
-const form_input2 = document.getElementsByClassName('form-input')[1]; //form email
-const form_message = document.getElementsByClassName('form-message')[0]; //form body
+// const form_btn = document.getElementsByClassName('form-btn')[0]; //send buttons
+// const form_input = document.getElementsByClassName('form-input')[0]; //form name
+// const form_input2 = document.getElementsByClassName('form-input')[1]; //form email
+// const form_message = document.getElementsByClassName('form-message')[0]; //form body
 
 //mode CLASS array
 const classArray = [mode_button, lang_button, //buttons
-                    body, footer, headerbg, headerimg, menu, menuIcon, menuText, h3, h1, //body 
-                    form_btn, form_input,form_input2, form_message]; //email form
+                    body, footer, headerbg, headerimg, menu, menuIcon, menuText, h3, h1]; //body 
+                    // form_btn, form_input,form_input2, form_message]; //email form
 //text areas IDs
 let language = 'en-us';
 let mode = 'light';
@@ -33,7 +33,7 @@ const card_2 = document.getElementById('card-2'); //linkedin
 // const card_3 = document.getElementById('card-3'); //urcade
 const card_4 = document.getElementById('card-4'); //playground
 const card_5 = document.getElementById('card-5'); //portfolio
-const form_title = document.getElementById('form-title'); //form title (text lang)
+// const form_title = document.getElementById('form-title'); //form title (text lang)
 
 //rocket
 var rocket = document.getElementById('rocket');
@@ -66,10 +66,10 @@ function changeBodyText(language){
             // card_3.innerHTML = "URCade is an operating system that turns your Raspberry Pi into a retro gaming system. The system was initially created as an exercise on dealing with Raspberry Pi and its Raspbian OS. As it grew, tools were written to help with its development. A project was born and URCade became a framework for building ready-to-use Pi images.";
             card_4.innerHTML = "The Playground contains mini-games I developed for my toddler to play. They are simple games and clones I developed just to exercise and learn. The games will all be played in your browser, using JavaScript, HTML5 and CSS3 - no extra applications necessary! In this page, you'll find all the latest updates to the playground (new levels, new features) as well as information about the project."
             card_5.innerHTML = "Here you can find a collection of my projects organized in a friendly Wordpress presentation format. If you want to see more of my work's source code, you can check out my Github page.";
-            form_input.placeholder = "   name"
-            form_input2.placeholder = "   e-mail"
-            form_message.placeholder = " type your message"
-            form_btn.innerHTML = "Send"
+            // form_input.placeholder = "   name"
+            // form_input2.placeholder = "   e-mail"
+            // form_message.placeholder = " type your message"
+            // form_btn.innerHTML = "Send"
             break;
         
         case 'pt-br':
@@ -91,10 +91,10 @@ function changeBodyText(language){
             // card_3.innerHTML = "URCade é uma plataforma que transforma seu Raspberry Pi em um multi video-game retrô. O sistema foi inicialmente criado como um exercício para lidar com o Raspberry Pi e seu sistema operacional. Com o tempo o exercício cresceu e várias ferramentas foram desenvolvidas durante o processo, até que nasceu o Projeto URCade como um framework para sistemas embarcados.";
             card_4.innerHTML = "O Playground contém minijogos que desenvolvi para o meu filho brincar. São jogos simples e clones que desenvolvi apenas para exercitar e aprender. Os jogos serão todos jogados em seu navegador, usando JavaScript, HTML5 e CSS3 - sem necessidade de aplicativos extras! Nesta página, você encontrará todas as atualizações mais recentes do playground (novos níveis, novos recursos), bem como informações sobre o projeto.";
             card_5.innerHTML = "Aqui você encontra a coleção dos meus projetos organizados em um formato Wordpress amigável. Se você quiser ver mais do meu código fonte, você pode verificar na minha página do Github.";
-            form_input.placeholder = "   nome"
-            form_input2.placeholder = "   e-mail"
-            form_message.placeholder = " deixe sua mensagem"
-            form_btn.innerHTML = "Enviar"
+            // form_input.placeholder = "   nome"
+            // form_input2.placeholder = "   e-mail"
+            // form_message.placeholder = " deixe sua mensagem"
+            // form_btn.innerHTML = "Enviar"
             break;
     }
 }
