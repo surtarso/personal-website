@@ -57,7 +57,7 @@ function changeBodyText(language){
             cv.href = "pdf/Tarso Galvao CV 2022 EN-US.pdf"
             ct.innerHTML = 'Contact';
             //head
-            text_active = ["Full-Stack Developer", "Game Developer", "Linux Administrator", "Digital Artist"];
+            text_active = ["Full-Stack Developer", "Visual Artist", "Game Developer", "Linux Administrator"];
             ht.innerHTML = text_active[job];
             //cards
             card_0.innerHTML = "I have taught myself to program for many years now and use these languages for personal projects and to teach myself how they work, because they are fun and interesting to me. The graph is a relation to the number of public repositories I have on Github.";
@@ -82,7 +82,7 @@ function changeBodyText(language){
             cv.href = "pdf/Tarso Galvao CV 2022 PT-BR.pdf"
             ct.innerHTML = 'Contato';
             //head
-            text_active = ["Desenvolvedor Full-Stack", "Desenvolvedor de Jogos", "Administrador Linux", "Artista Digital"];
+            text_active = ["Desenvolvedor Full-Stack", "Artista Plástico", "Desenvolvedor de Jogos", "Administrador Linux"];
             ht.innerHTML = text_active[job];
             //cards
             card_0.innerHTML = "Eu me ensinei a programar por muitos anos e uso essas linguagens para projetos pessoais, para me ensinar como elas funcionam e porque são divertidas e interessantes para mim. O gráfico é a relação de repositórios públicos que eu tenho no Github.";
