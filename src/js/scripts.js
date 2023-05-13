@@ -30,7 +30,7 @@ const ht = document.getElementById('ht'); //header text
 const card_0 = document.getElementById('card-0'); //languages
 const card_1 = document.getElementById('card-1'); //github
 const card_2 = document.getElementById('card-2'); //linkedin
-// const card_3 = document.getElementById('card-3'); //urcade
+const card_3 = document.getElementById('card-3'); //gallery
 const card_4 = document.getElementById('card-4'); //playground
 const card_5 = document.getElementById('card-5'); //portfolio
 // const form_title = document.getElementById('form-title'); //form title (text lang)
@@ -63,7 +63,7 @@ function changeBodyText(language){
             card_0.innerHTML = "I have taught myself to program for many years now and use these languages for personal projects and to teach myself how they work, because they are fun and interesting to me. The graph is a relation to the number of public repositories I have on Github.";
             card_1.innerHTML = "On Github you will find most of my projects and studies. Not only can you find and download software here, but you are also able to contribute to the code if you know how! From Web Design to Game Engines, here is where I'll keep them, feel free to snoop around!";
             card_2.innerHTML = "On LinkedIn, you will find my certifications for courses and bootcamps I completed. I completed these courses and bootcamps because I wanted to improve my career prospects. I believe that my certifications ensure that I have the skills and knowledge needed to pursue a successful career.";
-            // card_3.innerHTML = "URCade is an operating system that turns your Raspberry Pi into a retro gaming system. The system was initially created as an exercise on dealing with Raspberry Pi and its Raspbian OS. As it grew, tools were written to help with its development. A project was born and URCade became a framework for building ready-to-use Pi images.";
+            card_3.innerHTML = "Galley test edit.";
             card_4.innerHTML = "The Playground contains mini-games I developed for my toddler to play. They are simple games and clones I developed just to exercise and learn. The games will all be played in your browser, using JavaScript, HTML5 and CSS3 - no extra applications necessary! In this page, you'll find all the latest updates to the playground (new levels, new features) as well as information about the project."
             card_5.innerHTML = "Here you can find a collection of my projects organized in a friendly Wordpress presentation format. If you want to see more of my work's source code, you can check out my Github page.";
             // form_input.placeholder = "   name"
@@ -88,7 +88,7 @@ function changeBodyText(language){
             card_0.innerHTML = "Eu me ensinei a programar por muitos anos e uso essas linguagens para projetos pessoais, para me ensinar como elas funcionam e porque são divertidas e interessantes para mim. O gráfico é a relação de repositórios públicos que eu tenho no Github.";
             card_1.innerHTML = "No Github você encontra a maioria dos meus projetos e estudos. Você não apenas pode encontrar e baixar software aqui, mas também pode contribuir com o código se souber como! De Web Design a Game Engines, aqui é onde vou mantê-los, fique à vontade para bisbilhotar!";
             card_2.innerHTML = "No LinkedIn, você encontra minhas certificações para cursos e bootcamps que realizei. Eu completei esses cursos e bootcamps porque queria melhorar minhas perspectivas de carreira. Acredito que minhas certificações garantem que eu tenha as habilidades e conhecimentos necessários para seguir uma carreira de sucesso.";
-            // card_3.innerHTML = "URCade é uma plataforma que transforma seu Raspberry Pi em um multi video-game retrô. O sistema foi inicialmente criado como um exercício para lidar com o Raspberry Pi e seu sistema operacional. Com o tempo o exercício cresceu e várias ferramentas foram desenvolvidas durante o processo, até que nasceu o Projeto URCade como um framework para sistemas embarcados.";
+            card_3.innerHTML = "Teste Galeria";
             card_4.innerHTML = "O Playground contém minijogos que desenvolvi para o meu filho brincar. São jogos simples e clones que desenvolvi apenas para exercitar e aprender. Os jogos serão todos jogados em seu navegador, usando JavaScript, HTML5 e CSS3 - sem necessidade de aplicativos extras! Nesta página, você encontrará todas as atualizações mais recentes do playground (novos níveis, novos recursos), bem como informações sobre o projeto.";
             card_5.innerHTML = "Aqui você encontra a coleção dos meus projetos organizados em um formato Wordpress amigável. Se você quiser ver mais do meu código fonte, você pode verificar na minha página do Github.";
             // form_input.placeholder = "   nome"
